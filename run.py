@@ -26,5 +26,13 @@ def print_colour(text, color):
     """
     return cprint(text, color, attrs=['bold'])
 
-    print_colour('Hello, World! {thumbs_up}', colours[1])
-    
+    # print_colour('Hello, World! {thumbs_up}', colours[1])
+
+# say hello to the world:
+def say_hello():
+    """
+    Says hello to the world
+    """
+    print_colour('Hello, World!' + thumbs_up, colours[1])
+
+say_hello()
