@@ -47,9 +47,22 @@ class Student:
     about the student's character's strengths and flaws
     """
 
-    def __init__(self, name, about):
-        self.name = name
-        self.about = about
+    def __init__(self, gender):
+        self.gender = gender
+        self.name = self.get_student_name()
+        self.about = self.get_student_traits()
+
+    def get_student_name(self):
+        if self.gender == "female":
+            return student_name("female", 4)
+        else:
+            return student_name("male", 5)
+
+    def get_student_traits(self):
+        if self.gender == "female":
+            return students_character_traits("female-students", self.name, 4)
+        else:
+            return students_character_traits("male-students", self.name, 5)
 
 
 # check_errors functions
@@ -253,7 +266,7 @@ def student_name(gender, num, names=None):
         f"You can create a name for your {gender} student", colours[num])
     print_colour("Or select one from suggested names.", colours[2])
     response = check_errors_list_inputs(
-        "Would you like to create a name? Y for Yes N for No): ",
+        "Would you like to create a name? Y for Yes N for No: ",
         yes_no,
         "Please type Y or N")
 
@@ -306,44 +319,28 @@ def students_character_traits(people, name, num):
     if chosen_person == "a":
         characteristics_text = data[people][0]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()} {characteristics_text}",
-            colours[num])
-        next_clear(5)
+            f"Meet Your Character:\n{name.capitalize()}"
+            f"{characteristics_text}", colours[num])
+        check_errors_input("Once you have finished reading type: OK", "ok",
+                           "Did you type:  Ok ?")
 
     elif chosen_person == "b":
         characteristics_text = data[people][1]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()} {characteristics_text}",
-            colours[num])
-        next_clear(5)
+            f"Meet Your Character:\n{name.capitalize()}"
+            f"{characteristics_text}", colours[num])
+        check_errors_input("Once you have finished reading type: OK", "ok",
+                           "Did you type:  Ok ?")
 
     elif chosen_person == "c":
         characteristics_text = data[people][2]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()} {characteristics_text}",
-            colours[num])
-        next_clear(5)
+            f"Meet Your Character:\n{name.capitalize()}"
+            f"{characteristics_text}", colours[num])
+        check_errors_input("Once you have finished reading type: OK", "ok",
+                           "Did you type:  Ok ?")
 
     return characteristics_text
-
-
-def student_character():
-    """
-    Summary:
-     Create a Student instance based on user input.
-
-    This function calls the helper functions student_name()
-    and students_character_traits() to retrieve the student's
-    name and character traits, respectively. It then creates and
-    returns a new Student object initialized with these values.
-
-    Returns:
-        Student: A new instance of the Student class
-        with the specified name and character traits.
-    """
-    name = student_name()
-    about = students_character_traits()
-    return Student(name, about)
 
 
 if __name__ == "__main__":
@@ -353,12 +350,4 @@ if __name__ == "__main__":
     next_clear()
     gender = chose_gender()
     next_clear()
-    if gender == "female":
-        female_name = student_name("female", 4)
-        female_characteristics = students_character_traits(
-            "female-students", female_name, 4)
-
-    else:
-        male_name = student_name("male", 5)
-        male_characteristics = students_character_traits(
-            "male-students", male_name, 5)
+    student_instance = Student(gender)
