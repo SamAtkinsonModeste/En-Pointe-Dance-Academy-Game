@@ -31,21 +31,21 @@
     ],
     "female-students": [
         {
-            "background": "Female-A: \n is a prodigious talent in the jazz department, seamlessly blending commercial sharpness,\n contemporary fluidity, and lyrical expressiveness into a singular, \n captivating performance style. \n Her tough exterior hides a vulnerability \n rooted in her past struggles. She is passionate and determined,\n always striving to prove herself.",
+            "background": "Female-A: \n is a prodigious talent in the jazz department,\n seamlessly blending commercial sharpness,\n contemporary fluidity, and lyrical expressiveness into a singular, \n captivating performance style. \n Her tough exterior hides a vulnerability \n rooted in her past struggles. She is passionate and determined,\n always striving to prove herself.",
             "characteristics": "is a prodigious talent in the jazz department,\nseamlessly blending commercial sharpness,\ncontemporary fluidity, and lyrical\nexpressiveness into a singular, \ncaptivating performance style. \nHer tough exterior hides a vulnerability\nrooted in her past struggles. She is passionate and determined,\nalways striving to prove herself."
         },
         {
             "background": "Female-B: \n is a graceful lyrical jazz dancer \n whose performances are like poetry in motion. \n Every fluid, emotive gesture conveys deep passion and vulnerability,\n capturing the hearts of her audience. \n Still, her sensitive nature makes her \n wary of the academy's competitive pressures,\n and she sometimes questions whether\n her gentleness might be mistaken for a lack of strength",
-            "characteristics": "is a graceful lyrical jazz dancer \nwhose performances are like poetry in motion.\nEvery fluid, emotive gesture conveys deep passion and vulnerability,\ncapturing the hearts of her audience. \nStill, her sensitive nature makes her \nwary of the academy's competitive pressures,\n and she sometimes questions whether\nher gentleness might be mistaken for a lack of strength"
+            "characteristics": "is a graceful lyrical jazz dancer \nwhose performances are like poetry in motion.\nEvery fluid, emotive gesture conveys deep passion and vulnerability,\ncapturing the hearts of her audience. \nStill, her sensitive nature makes her \nwary of the academy's competitive pressures,\nand she sometimes questions whether\nher gentleness might be mistaken for a lack of strength"
         },
         {
             "background": "Female-C: \n is a dynamic commercial jazz dancer who \n lights up the stage with her bold \n energy and precise, high-impact moves.\n With a background steeped in theatrical performance,\n she exudes confidence and flair.\n However, the constant drive to exceed expectations \n can leave her questioning\n if her spark is enough to truly stand out among the elite. ",
-            "characteristics": "is a dynamic commercial jazz dancer who \nlights up the stage with her bold \nenergy and precise, high-impact moves.  \n With a background steeped in theatrical performance,\nshe exudes confidence and flair.\nHowever, the constant drive to exceed expectations \ncan leave her questioning\nif her spark is enough to truly stand out among the elite. "
+            "characteristics": "is a dynamic commercial jazz dancer who \nlights up the stage with her bold \nenergy and precise, high-impact moves.  \nWith a background steeped in theatrical performance,\nshe exudes confidence and flair.\nHowever, the constant drive to exceed expectations \ncan leave her questioning\nif her spark is enough to truly stand out among the elite. "
         }
     ],
     "male-students": [
         {
-            "background": "Male-A: \n is a talented contemporary jazz dancer\n whose every movement tells a poignant story.\n He pours his heart into expressive routines that capture\n fleeting emotions and subtle nuances. \n Though his refined technique is admired,\n he sometimes battles with self-doubt,\n feeling overshadowed by more extroverted\n peers in the competitive atmosphere of the academy.",
+            "background": "Male-A: \n is a talented lyrical jazz dancer\n whose every movement tells a poignant story.\n He pours his heart into expressive routines that capture\n fleeting emotions and subtle nuances. \n Though his refined technique is admired,\n he sometimes battles with self-doubt,\n feeling overshadowed by more extroverted\n peers in the competitive atmosphere of the academy.",
             "characteristics": "is a talented contemporary jazz dancer\nwhose every movement tells a poignant story.\nHe pours his heart into expressive routines that capture\nfleeting emotions and subtle nuances. \nThough his refined technique is admired,\nhe sometimes battles with self-doubt,\nfeeling overshadowed by more extroverted\npeers in the competitive atmosphere of the academy."
         },
         {
@@ -69,6 +69,34 @@
         },
         {
             "secret": "Secret Talent - D \n Adept musician, playing guitar and composing original songs"
+        }
+    ],
+    "story-1": [
+        {
+            "derek-speech-1": "In Studio 1 of En-Pointe-Dance-Academy,\nthe director of the academy Derek St James\n(celebrated former triple threat professional)\nenters to start the third years assembly.\nWith a warm smile, he announces,\n“We welcome our three guest choreographers\nwho will showcase your talents for your final performance as a student.”\nHe gestured to the first guest, Rico Martinez,\nfamed for his dynamic commercial routines;\nthen to Sasha Montgomery,\nwhose boundary-pushing contemporary pieces have redefined the art,\nand finally to Isabella Cruz,\nwhose lyrical choreography breathes life into emotion.\n“Keeping with tradition” Derek added,\n“I will be choreographing the finale\nwhere all your talents come together.”\nThe stage was set, and the path to your coveted role was about to begin."
+        }
+    ],
+    "decision-1": [
+        {
+            "thought-1": "was listening to Derek with excitement.\nAll three guest choreographers were legends who had\na lot of work to offer to dancers.\nThe thought of working with them was thrilling.\nBut what are my chances......?"
+        },
+        {
+            "id": "lyrical",
+            "choice-1": "I love Isabella Cruz's choreography\n I will have more of a chance\nfor the featured role in the lyrical piece.",
+            "choice-2": "I think my skills in commercial and contemporary might\nbe enough for the main lead.",
+            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?"
+        },
+        {
+            "id": "commercial",
+            "choice-1": "I think I will have more of a chance\nfor the featured role in the commercial piece.",
+            "choice-2": "I think my skills in lyrical and contemporary might\nbe enough for the main lead.",
+            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?"
+        },
+        {
+            "id": "allrounder",
+            "choice-1": "I think I will have more of a chance\nfor the featured role in the contemporary piece.",
+            "choice-2": "I think I have a good chance for the main role.\nI love all three choreographers styles.",
+            "choice-3": "Will my versatility be seen as a strength,\nor will they think\nI am not strong enough in either style for a lead?"
         }
     ]
 }
