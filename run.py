@@ -35,11 +35,19 @@ def print_colour(text, color):
 
 
 def print_inputs_coloured(text, colour):
-    # return the colored string
+    """
+    This function allows text to be added
+    to be printed and specified colour for the text
+
+    Args:
+        text: any text to be printd
+        colour: chosen from the colours list
+    """
     return colored(text, colour)
 
 
-# Student class
+# ^ CLASSES for Student and Choices
+# * Student Class
 class Student:
     """
     Student class
@@ -63,6 +71,30 @@ class Student:
             return students_character_traits("female-students", self.name, 4)
         else:
             return students_character_traits("male-students", self.name, 5)
+
+# ~ Choices Class
+
+
+class Choices:
+    """
+    This class will provide the blue print
+    for the choices the player needs to make
+    Each choice will have the id of: A, B, C
+    reaction: The reaction of the character
+    and the impact: impact of the choice.
+    """
+
+    def __init__(self, id, reaction, impact):
+        self.id = id
+        self.reaction = reaction
+        self.impact = impact
+
+    def impact_reveal(self):
+        """
+      this function will be used
+      to display the impact only
+        """
+        print(self.impact)
 
 
 # check_errors functions
@@ -297,7 +329,8 @@ def students_character_traits(people, name, num):
     print_colour(doom_font.renderText("Character Build"), colours[5])
     print_colour(doom_font.renderText("Characteristics"), colours[5])
     print_colour(
-        f"You will be shown three characteristics to choose for {name.capitalize()}",
+        f"You will be shown three characteristics to choose for "
+        f"{name.capitalize()}",
         colours[2])
     print_colour("Each one will consist of strengths and flaws:", colours[6])
     check_errors_input("Are you ready to view them? Type: OK", "ok",
@@ -319,7 +352,7 @@ def students_character_traits(people, name, num):
     if chosen_person == "a":
         characteristics_text = data[people][0]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()}"
+            f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
         check_errors_input("Once you have finished reading type: OK", "ok",
                            "Did you type:  Ok ?")
@@ -327,7 +360,7 @@ def students_character_traits(people, name, num):
     elif chosen_person == "b":
         characteristics_text = data[people][1]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()}"
+            f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
         check_errors_input("Once you have finished reading type: OK", "ok",
                            "Did you type:  Ok ?")
@@ -335,12 +368,50 @@ def students_character_traits(people, name, num):
     elif chosen_person == "c":
         characteristics_text = data[people][2]['characteristics']
         print_colour(
-            f"Meet Your Character:\n{name.capitalize()}"
+            f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
         check_errors_input("Once you have finished reading type: OK", "ok",
                            "Did you type:  Ok ?")
 
     return characteristics_text
+
+
+def story_paths(name):
+    speech = data['story-1'][0]['derek-speech-1']
+    thought = data['decision-1'][0]['thought-1']
+    print_colour(doom_font.renderText("Assembly"), colours[5])
+
+    print_colour(f"{speech}", colours[6])
+    print_colour(f"{name.capitalize()} {thought}", colours[5])
+    print_colour(f"Choose where {name.capitalize()}'s thought go:", colours[0])
+
+    choice_1 = Choices(
+        "Option A", data['decision-1'][1]['choice-1'],
+        "Will focus on the dance style")
+    choice_2 = Choices(
+        "Option B", data['decision-1'][1]['choice-2'],
+        "Will work hard at all styles")
+    choice_3 = Choices(
+        "Option C", data['decision-1'][1]['choice-3'],
+        "Loss of confidence")
+
+    print_colour(f"Option A:\n {choice_1.reaction}", colours[2])
+    print_colour(f"Option B:\n{choice_2.reaction}", colours[3])
+    print_colour(f"Option C:\n{choice_3.reaction}", colours[1])
+
+    options = ["a", "b", "c"]
+
+    chose_option = check_errors_list_inputs(
+        f"Which thoughts will you pick for {name.capitalize()}?:\n"
+        "Type A, B or C: ",
+        options, "Did you type A, B or C?")
+
+    if chose_option == "a":
+        choice_1.impact_reveal()
+    elif chose_option == "b":
+        choice_2.impact_reveal()
+    elif chose_option == "c":
+        choice_3.impact_reveal()
 
 
 if __name__ == "__main__":
@@ -350,4 +421,5 @@ if __name__ == "__main__":
     next_clear()
     gender = chose_gender()
     next_clear()
-    student_instance = Student(gender)
+    student = Student(gender)
+    story_paths(student.name)
