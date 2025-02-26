@@ -79,7 +79,8 @@
     ],
     "story-1": [
         {
-            "derek-speech-1": "In Studio 1 of En-Pointe-Dance-Academy,\nthe director of the academy Derek St James\n(celebrated former triple threat professional)\nenters to start the third years assembly.\nWith a warm smile, he announces,\n“We welcome our three guest choreographers\nwho will showcase your talents for your final performance as a student.”\nHe gestured to the first guest, Rico Martinez,\nfamed for his dynamic commercial routines;\nthen to Sasha Montgomery,\nwhose boundary-pushing contemporary pieces have redefined the art,\nand finally to Isabella Cruz,\nwhose lyrical choreography breathes life into emotion.\n“Keeping with tradition” Derek added,\n“I will be choreographing the finale\nwhere all your talents come together.”\nThe stage was set, and the path to your coveted role was about to begin."
+            "derek-speech-1": "In Studio 1 of En-Pointe-Dance-Academy,\nthe director of the academy Derek St James\n(celebrated former triple threat professional)\nenters to start the third years assembly.\nWith a warm smile, he announces,\n“We welcome our three guest choreographers\nwho will showcase your talents for your final performance as a student.”\nHe gestured to the first guest, Rico Martinez,\nfamed for his dynamic commercial routines;\nthen to Sasha Montgomery,\nwhose boundary-pushing contemporary pieces have redefined the art,\nand finally to Isabella Cruz,\nwhose lyrical choreography breathes life into emotion.\n“Keeping with tradition” Derek added,\n“I will be choreographing the finale\nwhere all your talents come together.”\nThe stage was set, and the path to your coveted role was about to begin.",
+            "audition": "The audition room buzzed with energy\nas the third-year dancers prepared to perform in front of the panel.\nIn groups of four, each group of students stepped forward,\ntaking their place in the center of the studio to dance."
         }
     ],
     "decision-1": [
@@ -89,7 +90,7 @@
         {
             "id": "lyrical",
             "choice-1": "I love Isabella Cruz's choreography\n I will have more of a chance\nfor the featured role in the lyrical piece.",
-            "impact-1": "Will focus on perfecting their strength, lyrical.",
+            "impact-1": "Will focus on perfecting strength, lyrical!",
             "choice-2": "I think my skills in commercial and contemporary might\nbe enough for the main lead.",
             "impact-2": "Will work harder at commercial and contemporary classes.",
             "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?",
@@ -98,7 +99,7 @@
         {
             "id": "commercial",
             "choice-1": "I think I will have more of a chance\nfor the featured role in the commercial piece.",
-            "impact-1": "Will focus on perfecting their strength, commercial.",
+            "impact-1": "Will focus on perfecting strength, commercial!",
             "choice-2": "I think my skills in lyrical and contemporary might\nbe enough for the main lead.",
             "impact-2": "Will work harder at lyrical and contemporary classes.",
             "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?",
@@ -107,7 +108,7 @@
         {
             "id": "allrounder",
             "choice-1": "I think I will have more of a chance\nfor the featured role in the contemporary piece.",
-            "impact-1": "Will focus on pushing themselves in all three classes.",
+            "impact-1": "Will focus on pefecting all three styles.",
             "choice-2": "I think I have a good chance for the main role.\nI love all three choreographers styles.",
             "impact-2": "Will research past choreography of all three choreographers.",
             "choice-3": "Will my versatility be seen as a strength,\nor will they think\nI am not strong enough in either style for a lead?",
