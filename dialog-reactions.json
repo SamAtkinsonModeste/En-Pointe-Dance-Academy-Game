@@ -31,28 +31,34 @@
     ],
     "female-students": [
         {
-            "background": "Female-A: \n is a prodigious talent in the jazz department,\n seamlessly blending commercial sharpness,\n contemporary fluidity, and lyrical expressiveness into a singular, \n captivating performance style. \n Her tough exterior hides a vulnerability \n rooted in her past struggles. She is passionate and determined,\n always striving to prove herself.",
-            "characteristics": "is a prodigious talent in the jazz department,\nseamlessly blending commercial sharpness,\ncontemporary fluidity, and lyrical\nexpressiveness into a singular, \ncaptivating performance style. \nHer tough exterior hides a vulnerability\nrooted in her past struggles. She is passionate and determined,\nalways striving to prove herself."
-        },
-        {
-            "background": "Female-B: \n is a graceful lyrical jazz dancer \n whose performances are like poetry in motion. \n Every fluid, emotive gesture conveys deep passion and vulnerability,\n capturing the hearts of her audience. \n Still, her sensitive nature makes her \n wary of the academy's competitive pressures,\n and she sometimes questions whether\n her gentleness might be mistaken for a lack of strength",
+            "style": "lyrical",
+            "background": "Female-A: \n is a graceful lyrical jazz dancer \n whose performances are like poetry in motion. \n Every fluid, emotive gesture conveys deep passion and vulnerability,\n capturing the hearts of her audience. \n Still, her sensitive nature makes her \n wary of the academy's competitive pressures,\n and she sometimes questions whether\n her gentleness might be mistaken for a lack of strength",
             "characteristics": "is a graceful lyrical jazz dancer \nwhose performances are like poetry in motion.\nEvery fluid, emotive gesture conveys deep passion and vulnerability,\ncapturing the hearts of her audience. \nStill, her sensitive nature makes her \nwary of the academy's competitive pressures,\nand she sometimes questions whether\nher gentleness might be mistaken for a lack of strength"
         },
         {
-            "background": "Female-C: \n is a dynamic commercial jazz dancer who \n lights up the stage with her bold \n energy and precise, high-impact moves.\n With a background steeped in theatrical performance,\n she exudes confidence and flair.\n However, the constant drive to exceed expectations \n can leave her questioning\n if her spark is enough to truly stand out among the elite. ",
+            "style": "commercial",
+            "background": "Female-B: \n is a dynamic commercial jazz dancer who \n lights up the stage with her bold \n energy and precise, high-impact moves.\n With a background steeped in theatrical performance,\n she exudes confidence and flair.\n However, the constant drive to exceed expectations \n can leave her questioning\n if her spark is enough to truly stand out among the elite. ",
             "characteristics": "is a dynamic commercial jazz dancer who \nlights up the stage with her bold \nenergy and precise, high-impact moves.  \nWith a background steeped in theatrical performance,\nshe exudes confidence and flair.\nHowever, the constant drive to exceed expectations \ncan leave her questioning\nif her spark is enough to truly stand out among the elite. "
+        },
+        {
+            "style": "allrounder",
+            "background": "Female-C: \n is a prodigious talent in the jazz department,\n seamlessly blending commercial sharpness,\n contemporary fluidity, and lyrical expressiveness into a singular, \n captivating performance style. \n Her tough exterior hides a vulnerability \n rooted in her past struggles. She is passionate and determined,\n always striving to prove herself.",
+            "characteristics": "is a prodigious talent in the jazz department,\nseamlessly blending commercial sharpness,\ncontemporary fluidity, and lyrical\nexpressiveness into a singular, \ncaptivating performance style. \nHer tough exterior hides a vulnerability\nrooted in her past struggles. She is passionate and determined,\nalways striving to prove herself."
         }
     ],
     "male-students": [
         {
+            "style": "lyrical",
             "background": "Male-A: \n is a talented lyrical jazz dancer\n whose every movement tells a poignant story.\n He pours his heart into expressive routines that capture\n fleeting emotions and subtle nuances. \n Though his refined technique is admired,\n he sometimes battles with self-doubt,\n feeling overshadowed by more extroverted\n peers in the competitive atmosphere of the academy.",
             "characteristics": "is a talented contemporary jazz dancer\nwhose every movement tells a poignant story.\nHe pours his heart into expressive routines that capture\nfleeting emotions and subtle nuances. \nThough his refined technique is admired,\nhe sometimes battles with self-doubt,\nfeeling overshadowed by more extroverted\npeers in the competitive atmosphere of the academy."
         },
         {
+            "style": "commercial",
             "background": "Male-B: \n is a charismatic commercial jazz performer \n known for his energetic stage presence and precision.\n Raised in a family of seasoned performers,\n he was practically born to dazzle.\n Yet the weight of familial expectations and the pressure\n to reinvent his inherited legacy\n can leave him wrestling with moments of insecurity.",
             "characteristics": "is a charismatic commercial jazz performer \nknown for his energetic stage presence and precision.\nRaised in a family of seasoned performers,\nhe was practically born to dazzle.\nYet the weight of familial expectations and the pressure\nto reinvent his inherited legacy\ncan leave him wrestling with moments of insecurity."
         },
         {
+            "style": "allrounder",
             "background": "Male-C: \n is an exceptionally versatile dancer,\n effortlessly weaving elements of commercial, contemporary,\n and lyrical jazz into his performances.\n His ability to adapt and innovate \n across styles makes him a natural standout.\n Despite his broad talents, he is driven by a relentless desire\n for perfection that sometimes fuels bouts of self-doubt.",
             "characteristics": "is an exceptionally versatile dancer,\neffortlessly weaving elements of commercial, contemporary,\nand lyrical jazz into his performances.\nHis ability to adapt and innovate \nacross styles makes him a natural standout.\n Despite his broad talents, he is driven by a relentless desire\nfor perfection that sometimes fuels bouts of self-doubt."
         }
@@ -83,20 +89,29 @@
         {
             "id": "lyrical",
             "choice-1": "I love Isabella Cruz's choreography\n I will have more of a chance\nfor the featured role in the lyrical piece.",
+            "impact-1": "Will focus on perfecting their strength, lyrical.",
             "choice-2": "I think my skills in commercial and contemporary might\nbe enough for the main lead.",
-            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?"
+            "impact-2": "Will work harder at commercial and contemporary classes.",
+            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?",
+            "impact-3": "Loses confidence"
         },
         {
             "id": "commercial",
             "choice-1": "I think I will have more of a chance\nfor the featured role in the commercial piece.",
+            "impact-1": "Will focus on perfecting their strength, commercial.",
             "choice-2": "I think my skills in lyrical and contemporary might\nbe enough for the main lead.",
-            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?"
+            "impact-2": "Will work harder at lyrical and contemporary classes.",
+            "choice-3": "I wonder if I'll even be noticed for any featured roles.\nI'll probably end up in the ensemble?",
+            "impact-3": "Loses confidence"
         },
         {
             "id": "allrounder",
             "choice-1": "I think I will have more of a chance\nfor the featured role in the contemporary piece.",
+            "impact-1": "Will focus on pushing themselves in all three classes.",
             "choice-2": "I think I have a good chance for the main role.\nI love all three choreographers styles.",
-            "choice-3": "Will my versatility be seen as a strength,\nor will they think\nI am not strong enough in either style for a lead?"
+            "impact-2": "Will research past choreography of all three choreographers.",
+            "choice-3": "Will my versatility be seen as a strength,\nor will they think\nI am not strong enough in either style for a lead?",
+            "impact-3": "Loses confidence"
         }
     ]
 }
