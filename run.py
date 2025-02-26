@@ -58,7 +58,7 @@ class Student:
     def __init__(self, gender):
         self.gender = gender
         self.name = self.get_student_name()
-        self.about = self.get_student_traits()
+        self.about, self.style = self.get_student_traits()
 
     def get_student_name(self):
         if self.gender == "female":
@@ -351,6 +351,7 @@ def students_character_traits(people, name, num):
 
     if chosen_person == "a":
         characteristics_text = data[people][0]['characteristics']
+        character_style = data[people][0]['style']
         print_colour(
             f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
@@ -359,6 +360,7 @@ def students_character_traits(people, name, num):
 
     elif chosen_person == "b":
         characteristics_text = data[people][1]['characteristics']
+        character_style = data[people][1]['style']
         print_colour(
             f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
@@ -367,33 +369,48 @@ def students_character_traits(people, name, num):
 
     elif chosen_person == "c":
         characteristics_text = data[people][2]['characteristics']
+        character_style = data[people][2]['style']
         print_colour(
             f"Meet Your Character:\n{name.capitalize()} "
             f"{characteristics_text}", colours[num])
         check_errors_input("Once you have finished reading type: OK", "ok",
                            "Did you type:  Ok ?")
 
-    return characteristics_text
+    return characteristics_text, character_style
 
 
-def story_paths(name):
-    speech = data['story-1'][0]['derek-speech-1']
-    thought = data['decision-1'][0]['thought-1']
-    print_colour(doom_font.renderText("Assembly"), colours[5])
+story_dialogue = {
+    "assembly":  data['story-1'][0]['derek-speech-1']
+}
 
-    print_colour(f"{speech}", colours[6])
-    print_colour(f"{name.capitalize()} {thought}", colours[5])
-    print_colour(f"Choose where {name.capitalize()}'s thought go:", colours[0])
+thoughts_of_student = {
+    "assembly_thought": data['decision-1'][0]['thought-1']
+}
+
+
+def student_thoughts(name, thought):
+    print_colour(
+        f"{name.capitalize()} {thought}",
+        colours[5])
+
+
+def choices(name, style, decision):
+    if style == "lyrical":
+        data_style = 1
+    elif style == "commercial":
+        data_style = 2
+    elif style == "allrounder":
+        data_style = 3
 
     choice_1 = Choices(
-        "Option A", data['decision-1'][1]['choice-1'],
-        "Will focus on the dance style")
+        "Option A", data[decision][data_style]['choice-1'],
+        data[decision][data_style]['impact-1'])
     choice_2 = Choices(
-        "Option B", data['decision-1'][1]['choice-2'],
-        "Will work hard at all styles")
+        "Option B", data[decision][data_style]['choice-2'],
+        data[decision][data_style]['impact-2'])
     choice_3 = Choices(
-        "Option C", data['decision-1'][1]['choice-3'],
-        "Loss of confidence")
+        "Option C", data[decision][data_style]['choice-3'],
+        data[decision][data_style]['impact-3'])
 
     print_colour(f"Option A:\n {choice_1.reaction}", colours[2])
     print_colour(f"Option B:\n{choice_2.reaction}", colours[3])
@@ -407,11 +424,19 @@ def story_paths(name):
         options, "Did you type A, B or C?")
 
     if chose_option == "a":
-        choice_1.impact_reveal()
+        print_colour(f"{choice_1.impact}", colours[6])
     elif chose_option == "b":
-        choice_2.impact_reveal()
+        print_colour(f"{choice_2.impact}", colours[6])
     elif chose_option == "c":
-        choice_3.impact_reveal()
+        choice_3.impact
+        print_colour(f"{choice_3.impact}", colours[6])
+
+
+def story_paths(name):
+    print_colour(doom_font.renderText("Assembly"), colours[5])
+    print_colour(f"{story_dialogue['assembly']}", colours[6])
+    print_colour(f"Choose where {name.capitalize()}'s thought go:",
+                 colours[0])
 
 
 if __name__ == "__main__":
@@ -423,3 +448,5 @@ if __name__ == "__main__":
     next_clear()
     student = Student(gender)
     story_paths(student.name)
+    student_thoughts(student.name, thoughts_of_student['assembly_thought'])
+    choices(student.name, student.style, "decision-1")
