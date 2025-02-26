@@ -379,8 +379,10 @@ def students_character_traits(people, name, num):
     return characteristics_text, character_style
 
 
+# ^ DICTIONARIES for the story
 story_dialogue = {
-    "assembly":  data['story-1'][0]['derek-speech-1']
+    "assembly":  data['story-1'][0]['derek-speech-1'],
+    "audition":    data['story-1'][0]['audition']
 }
 
 thoughts_of_student = {
@@ -392,6 +394,11 @@ def student_thoughts(name, thought):
     print_colour(
         f"{name.capitalize()} {thought}",
         colours[5])
+    print_colour(f"Choose where {name.capitalize()}'s thought go:",
+                 colours[0])
+
+
+players_choices = []
 
 
 def choices(name, style, decision):
@@ -424,19 +431,22 @@ def choices(name, style, decision):
         options, "Did you type A, B or C?")
 
     if chose_option == "a":
+        print_colour(f"{name.capitalize()}:", colours[0])
         print_colour(f"{choice_1.impact}", colours[6])
     elif chose_option == "b":
+        print_colour(f"{name.capitalize()}:", colours[0])
         print_colour(f"{choice_2.impact}", colours[6])
     elif chose_option == "c":
         choice_3.impact
+        print_colour(f"{name.capitalize()}:", colours[0])
         print_colour(f"{choice_3.impact}", colours[6])
 
+        players_choices.append(chose_option)
 
-def story_paths(name):
-    print_colour(doom_font.renderText("Assembly"), colours[5])
-    print_colour(f"{story_dialogue['assembly']}", colours[6])
-    print_colour(f"Choose where {name.capitalize()}'s thought go:",
-                 colours[0])
+
+def story_paths(title, story):
+    print_colour(doom_font.renderText(f"{title}"), colours[5])
+    print_colour(f"{story}", colours[6])
 
 
 if __name__ == "__main__":
@@ -447,6 +457,8 @@ if __name__ == "__main__":
     gender = chose_gender()
     next_clear()
     student = Student(gender)
-    story_paths(student.name)
+    story_paths("Assembly", story_dialogue['assembly'])
     student_thoughts(student.name, thoughts_of_student['assembly_thought'])
     choices(student.name, student.style, "decision-1")
+    next_clear(4)
+    story_paths("Audition", story_dialogue['audition'])
