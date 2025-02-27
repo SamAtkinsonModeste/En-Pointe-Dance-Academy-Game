@@ -117,6 +117,26 @@
             "impact-3": "Loses confidence"
         }
     ],
+    "decision-2": [
+        {
+            "id": "lyrical",
+            "reaction-1": "was over joyed. Oh my gosh I get to work with Isabella Cruz!!!!\nI am glad I focused on my lyrical dancing.",
+            "reaction-2": "was stunned! They see me as a tripie threat!\nI can't believe it, I get to work with all three legends!!\nI will also to be personally mentored by Derek!!!",
+            "reaction-3": "felt sad. But then remembered Dereks words.\nI believe in myself and will never doubt my talent again.\n I'll prove my confidence is back."
+        },
+        {
+            "id": "commercial",
+            "reaction-1": "was over joyed. Oh my gosh I get to work with Rico Martinez!!!!\nI am glad I focused on my commercial dancing.",
+            "reaction-2": "was stunned! They see me as a triple threat!\nI can't believe it, I get to work with all three legends!!\nI will also be personally mentored by Derek!!!",
+            "reaction-3": "felt sad. But then remembered Dereks words.\nI believe in myself and will never doubt my talent again.\n I'll prove my confidence is back."
+        },
+        {
+            "id": "contemporary",
+            "reaction-1": "was over joyed. Oh my gosh I get to work with  Sasha Montgomery!!!!\nI am glad I focused moren my contemporary dancing.\nThis will be an awesome challeng!!",
+            "reaction-2": "was over joyed! This makes me feel more confident saying,\nI am a triple threat!\nI can't believe it, I get to work with all three legends!!\nI will also be personally mentored by Derek!!!",
+            "reaction-3": "felt sad. But then remembered Dereks words.\nI believe in myself and will never doubt my talent again.\n I'll prove my confidence is back."
+        }
+    ],
     "character-actions": [
         {
             "id": "lyrical",
