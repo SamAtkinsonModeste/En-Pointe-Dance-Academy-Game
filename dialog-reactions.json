@@ -41,7 +41,7 @@
             "characteristics": "is a dynamic commercial jazz dancer who \nlights up the stage with her bold \nenergy and precise, high-impact moves.  \nWith a background steeped in theatrical performance,\nshe exudes confidence and flair.\nHowever, the constant drive to exceed expectations \ncan leave her questioning\nif her spark is enough to truly stand out among the elite. "
         },
         {
-            "style": "allrounder",
+            "style": "contemporary",
             "background": "Female-C: \n is a prodigious talent in the jazz department,\n seamlessly blending commercial sharpness,\n contemporary fluidity, and lyrical expressiveness into a singular, \n captivating performance style. \n Her tough exterior hides a vulnerability \n rooted in her past struggles. She is passionate and determined,\n always striving to prove herself.",
             "characteristics": "is a prodigious talent in the jazz department,\nseamlessly blending commercial sharpness,\ncontemporary fluidity, and lyrical\nexpressiveness into a singular, \ncaptivating performance style. \nHer tough exterior hides a vulnerability\nrooted in her past struggles. She is passionate and determined,\nalways striving to prove herself."
         }
@@ -58,7 +58,7 @@
             "characteristics": "is a charismatic commercial jazz performer \nknown for his energetic stage presence and precision.\nRaised in a family of seasoned performers,\nhe was practically born to dazzle.\nYet the weight of familial expectations and the pressure\nto reinvent his inherited legacy\ncan leave him wrestling with moments of insecurity."
         },
         {
-            "style": "allrounder",
+            "style": "contemporary",
             "background": "Male-C: \n is an exceptionally versatile dancer,\n effortlessly weaving elements of commercial, contemporary,\n and lyrical jazz into his performances.\n His ability to adapt and innovate \n across styles makes him a natural standout.\n Despite his broad talents, he is driven by a relentless desire\n for perfection that sometimes fuels bouts of self-doubt.",
             "characteristics": "is an exceptionally versatile dancer,\neffortlessly weaving elements of commercial, contemporary,\nand lyrical jazz into his performances.\nHis ability to adapt and innovate \nacross styles makes him a natural standout.\n Despite his broad talents, he is driven by a relentless desire\nfor perfection that sometimes fuels bouts of self-doubt."
         }
@@ -108,7 +108,7 @@
             "impact-3": "Loses confidence"
         },
         {
-            "id": "allrounder",
+            "id": "contemporary",
             "choice-1": "I think I will have more of a chance\nfor the featured role in the contemporary piece.",
             "impact-1": "Will focus on pefecting all three styles.",
             "choice-2": "I think I have a good chance for the main role.\nI love all three choreographers styles.",
@@ -151,7 +151,7 @@
             "audition-3": "knew the choreography, but doubt was creeping in.\nThe commercial section lacked the usual fire,\nwith lots of hesitation and slighty stiff movements.\nWhen the contemporary section came,hesitation turned into missteps.\nThe lyrical segment felt foreign\nexpression went out the window and became more about remembering than feeling.\nThe moment the music stopped,\na glance toward the choreographers,their expressions were unreadable.\nEnsemble here I come."
         },
         {
-            "id": "allrounder",
+            "id": "contemporary",
             "audition-1": "thrived in the contemporary segment, limbs slicing through the air with calculated abandon.\nThe music was unpredictable, yet adaptable,\nblending control and chaos with seamless precision.\nSasha Montgomery watched with quiet intensity,\nher hand tapping rhythmically against her knee.\nWhen the music switched to lyrical, the adjustment was instant,\nletting softness take over before transitioning into the commanding power of commercial.\nThis wasn't being just a dancer\n this was being a chameleon, ready for whatever role they saw fit.",
             "audition-2": "studied each choreographer's style meticulously, and now was the moment to prove all the research would pay off.\nThe contemporary performance was fluid yet grounded, lyrical section was emotive and controlled,\nand in the commercial routine every beat was hit with effortless confidence.\nThis was more than an audition,it was a showcase of adaptability at a high level.\nDerek St. James sat forward, exchanging looks with the other choreographers.\nIf they were searching for someone to be the bridge between all three styles,\ndid the answer just danced for them?",
             "audition-3": "was worried about being seen as not strong enough in any single style,\nlosing confidence like a leaking bucket through out each style.\nThe commercial section wasn't as powerful as the specialists,\nthe lyrical didn't have the same raw emotion,\nand the contemporary lacked the cutting-edge risk-taking.\nThe saying 'jack of all trades, master of none'\n came to mind.Was this going to be the back of ensemble time?"
