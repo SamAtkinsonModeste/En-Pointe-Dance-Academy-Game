@@ -382,7 +382,7 @@ def students_character_traits(people, name, num):
             f"{characteristics_text}", colours[num])
         check_errors_input("Once you have finished reading type: OK", "ok",
                            "Did you type:  Ok ?")
-
+    next_clear()
     return characteristics_text, character_style
 
 
