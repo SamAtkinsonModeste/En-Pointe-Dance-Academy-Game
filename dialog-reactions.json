@@ -114,5 +114,25 @@
             "choice-3": "Will my versatility be seen as a strength,\nor will they think\nI am not strong enough in either style for a lead?",
             "impact-3": "Loses confidence"
         }
+    ],
+    "character-actions": [
+        {
+            "id": "lyrical",
+            "audition-1": "melted into the movement of the lyrical piece,\neach transition fluid and expressive.\nEvery extension reached skyward with a sense of longing.\nTurns precise yet effortless.\nEvery motion told a story, a silent dialogue to Isabella Cruz.",
+            "audition-2": "took a deep breath, stepping into the audition space with purpose.\nThe lyrical section was the comfort zone,\nbut as the contemporary portion began, every move stretched past the usual softness,\nadding sharper dynamics to impress Sasha Montgomery\n When the commercial section arrived, every movement was met with sharpness,\nhitting each accent with newfound confidence.\nIt was all about versatility.\nDerek St. James exchanges glances with the other choreographers\nWas this enough to prove I could be the one to tie the pieces together?",
+            "audition-3": "stepped into the center knowing technique was solid,\nbut couldn't help the unsteady breath.\nSelf-doubt clung as a film making muscles fell like lead.\nEvery movement, though graceful, lacked the conviction of the usual dancing.\nThere was hesitation before each leap, and confidence wavered with every step.\nIsabella Cruz watched carefully, her expression unreadable."
+        },
+        {
+            "id": "commercial",
+            "audition-1": "launched into the choreography with power and precision, when the bass dropped.\nEvery movement was sharp, explosive and controlled.\nEach pop and lock punctuated the music perfectly.\nRico Martinez stood at the front,arms crossed, \nwatching every step with a slight smile.\nWhen the final beat was hit with a smooth,confident slide,\nRico Martinez clapped once.Knowing commercial was a stength,\nevery second of the performmance showcased\nexactly where the lead should land!",
+            "audition-2": "knew it wasn't just about energy, it was about adaptability.\nThe commercial section was strong\nas the music transitioned into contemporary,\nfocus was more on breath,control and release\nletting the body flow into the movement.\nWhen it was time for the lyrical piece, the focus swtiched to softer lines\n and pushing emotion into each turn and reach.\nIt wasn't just about performance, it was about proving versatility.\n Derek St. James whispered something to Sasha Montgomery.\nHad all the hard work been worth it?",
+            "audition-3": "knew the choreography, but doubt was creeping in.\nThe commercial section lacked the usual fire,\n with lots of hesitation and slighty stiff movements.\nWhen the contemporary section came,hesitation turned into missteps.\nThe lyrical segment felt foreign\nexpression went out the window and became more about remembering than feeling.\nThe moment the music stopped,\na glance toward the choreographers,their expressions were unreadable.\nEnsemble here I come."
+        },
+        {
+            "id": "allrounder",
+            "audition-1": "thrived in the contemporary segment, limbs slicing through the air with calculated abandon.\nThe music was unpredictable, yet adaptable,\nblending control and chaos with seamless precision.\nSasha Montgomery watched with quiet intensity,\nher hand tapping rhythmically against her knee.\nWhen the music switched to lyrical, the adjustment was instant,\nletting softness take over before transitioning into the commanding power of commercial.\nThis wasn't being just a dancer\n this was being a chameleon, ready for whatever role they saw fit.",
+            "audition-2": "studied each choreographer's style meticulously, and now was the moment to prove all the research would pay off.\nThe contemporary performance was fluid yet grounded, lyrical section was emotive and controlled,\nand in the commercial routine every beat was hit with effortless confidence.\nThis was more than an audition,it was a showcase of adaptability at a high level.\nDerek St. James sat forward, exchanging looks with the other choreographers.\nIf they were searching for someone to be the bridge between all three styles,\ndid the answer just danced for them?",
+            "audition-3": "was worried about being seen as not strong enough in any single style,\nlosing confidence like a leaking bucket through out each style.\nThe commercial section wasn't as powerful as the specialists,\nthe lyrical didn't have the same raw emotion,\nand the contemporary lacked the cutting-edge risk-taking.\nThe saying 'jack of all trades, master of none'\n came to mind.Was this going to be the back of ensemble time?"
+        }
     ]
 }
