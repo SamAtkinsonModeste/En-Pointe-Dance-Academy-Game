@@ -153,22 +153,22 @@ def next_clear(delay=0):
     time.sleep(delay)
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
+# ~ list to store players story
+players_choices = []
+
+
+# ^ DICTIONARIES for the story
+story_dialogue = {
+    "assembly":  data['story-1'][0]['derek-speech-1'],
+    "audition":  data['story-1'][0]['audition']
+}
+
+thoughts_of_student = {
+    "assembly_thought": data['decision-1'][0]['thought-1']
+}
+
 # intro to game story function
-
-
-def intro_to_game_story():
-    """
-    Tells the player the games story
-    And the possible charcters
-    """
-    print_colour(georgia11_font.renderText("En Pointe"), colours[5])
-    print_colour(doom_font.renderText("Dance Academy"), colours[5])
-    print_colour('Step into the world of dance\n'
-                 'and follow the journey of one of three unique dancers\n'
-                 'in their final year at the prestigious\n'
-                 'En Pointe Dance Academy!', colours[4])
-    check_errors_input("To continue type: Next",
-                       "next", "Did you type: Next?")
 
 
 # tells the player what kind of game it is
@@ -198,6 +198,8 @@ def about_game():
 
     check_errors_input("To begin type: 5,6,7,8", "5,6,7,8",
                        "Did you type:  5,6,7,8 ?")
+
+    next_clear()
 
 
 # gender of character function
@@ -237,6 +239,7 @@ def chose_gender():
 
         if agree_disagree == "y":
             confirmed = True
+            next_clear()
             return select_gender
 
         else:
@@ -379,17 +382,6 @@ def students_character_traits(people, name, num):
     return characteristics_text, character_style
 
 
-# ^ DICTIONARIES for the story
-story_dialogue = {
-    "assembly":  data['story-1'][0]['derek-speech-1'],
-    "audition":    data['story-1'][0]['audition']
-}
-
-thoughts_of_student = {
-    "assembly_thought": data['decision-1'][0]['thought-1']
-}
-
-
 def student_thoughts(name, thought):
     print_colour(
         f"{name.capitalize()} {thought}",
@@ -398,10 +390,9 @@ def student_thoughts(name, thought):
                  colours[0])
 
 
-players_choices = []
-
-
 def choices(name, style, decision):
+    global players_choices
+
     if style == "lyrical":
         data_style = 1
     elif style == "commercial":
@@ -441,7 +432,37 @@ def choices(name, style, decision):
         print_colour(f"{name.capitalize()}:", colours[0])
         print_colour(f"{choice_3.impact}", colours[6])
 
-        players_choices.append(chose_option)
+    players_choices.append(chose_option)
+
+    next_clear()
+
+
+def actions_of_characters(name, style):
+    global players_choices
+
+    audition_map = {
+        "a": "audition-1",
+        "b": "audition-2",
+        "c": "audition-3"
+    }
+
+    if style == "lyrical":
+        data_style = 0
+    elif style == "commercial":
+        data_style = 1
+    elif style == "allrounder":
+        data_style = 2
+
+    student_style = style
+
+    if style == student_style:
+        choice = players_choices[0]
+        if choice in audition_map:
+            action = data['character-actions'][data_style][audition_map
+                                                           [choice]]
+            colour_index = {"a": 2, "b": 3, "c": 1}[choice]
+            print_colour(f"{name.capitalize()} {action}",
+                         colours[colour_index])
 
 
 def story_paths(title, story):
@@ -449,16 +470,29 @@ def story_paths(title, story):
     print_colour(f"{story}", colours[6])
 
 
-if __name__ == "__main__":
-    intro_to_game_story()
+def story_adventure_game():
+    """
+    Tells the player the games story
+    And the possible charcters
+    """
+    print_colour(georgia11_font.renderText("En Pointe"), colours[5])
+    print_colour(doom_font.renderText("Dance Academy"), colours[5])
+    print_colour('Step into the world of dance\n'
+                 'and follow the journey of one of three unique dancers\n'
+                 'in their final year at the prestigious\n'
+                 'En Pointe Dance Academy!', colours[4])
+    check_errors_input("To continue type: Next",
+                       "next", "Did you type: Next?")
     next_clear()
     about_game()
-    next_clear()
     gender = chose_gender()
-    next_clear()
     student = Student(gender)
     story_paths("Assembly", story_dialogue['assembly'])
     student_thoughts(student.name, thoughts_of_student['assembly_thought'])
     choices(student.name, student.style, "decision-1")
-    next_clear(4)
     story_paths("Audition", story_dialogue['audition'])
+    actions_of_characters(student.name, student.style)
+
+
+if __name__ == "__main__":
+    story_adventure_game()
