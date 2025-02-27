@@ -22,8 +22,9 @@ with open('dialog-reactions.json', 'r') as file:
 
 # emoji variables
 thumbs_up = emoji.emojize(':thumbs_up:')
-angry_face = emoji.emojize(':angry_face:')
-big_laugh = emoji.emojize(':grinning_squinting_face:')
+crying_face = emoji.emojize(":crying_face:")
+flexed_biceps = emoji.emojize(":flexed_biceps:")
+raising_hands = emoji.emojize(":raising_hands:")
 
 
 # Colour functions
@@ -389,8 +390,6 @@ def student_thoughts(name, thought, num):
     print_colour(
         f"{name.capitalize()} {thought}",
         colours[num])
-    print_colour(f"Choose where {name.capitalize()}'s thought go:",
-                 colours[0])
 
 
 def choices(name, style, decision):
@@ -400,8 +399,11 @@ def choices(name, style, decision):
         data_style = 1
     elif style == "commercial":
         data_style = 2
-    elif style == "allrounder":
+    elif style == "contemporary":
         data_style = 3
+
+    print_colour(f"Choose where {name.capitalize()}'s thought go:",
+                 colours[0])
 
     choice_1 = Choices(
         "Option A", data[decision][data_style]['choice-1'],
@@ -413,9 +415,10 @@ def choices(name, style, decision):
         "Option C", data[decision][data_style]['choice-3'],
         data[decision][data_style]['impact-3'])
 
-    print_colour(f"Option A:\n {choice_1.reaction}", colours[2])
-    print_colour(f"Option B:\n{choice_2.reaction}", colours[3])
-    print_colour(f"Option C:\n{choice_3.reaction}", colours[1])
+    print_colour(
+        f"Option A:\n {choice_1.reaction} {flexed_biceps}", colours[2])
+    print_colour(f"Option B:\n{choice_2.reaction} {raising_hands}", colours[3])
+    print_colour(f"Option C:\n{choice_3.reaction} {crying_face}", colours[1])
 
     options = ["a", "b", "c"]
 
@@ -453,7 +456,7 @@ def actions_of_characters(name, style):
         data_style = 0
     elif style == "commercial":
         data_style = 1
-    elif style == "allrounder":
+    elif style == "contemporary":
         data_style = 2
 
     student_style = style
@@ -491,6 +494,18 @@ def dance_role_revealed(name, style, gender):
         "c": f"Understudy lead {style}",
     }
 
+    selected_data = next(
+        (item for item in data['decision-2'] if item['id'] == style), None)
+
+    if selected_data:
+        reaction_map = {
+            "a": selected_data['reaction-1'],
+            "b": selected_data['reaction-2'],
+            "c": selected_data['reaction-3']
+        }
+    else:
+        reaction_map = {}
+
     if gender == "female":
         num = 4
     else:
@@ -501,19 +516,56 @@ def dance_role_revealed(name, style, gender):
         role = players_choices[0]
         if role in roles_map:
             print_colour(
-                f"Under {name.capitalize()}'s name was the role:"
+                f"Under {name.capitalize()}'s name was the role: "
                 f"{roles_map[role]}",
                 colours[num])
 
-    if players_choices[0] == "c" and student_style == "allrounder":
-        print_colour(
-            f"Under {name.capitalize()}'s name was the role:"
-            " Main lead Understudy", colours[num])
+        if role in reaction_map:
+            print_colour(
+                f"{name.capitalize()} {reaction_map[role]}",
+                colours[num])
+
+    check_errors_input("When you are ready type: OK", "ok",
+                       "Did you type:  Ok ?")
+    next_clear()
 
 
 def story_paths(title, story, num):
     print_colour(doom_font.renderText(f"{title}"), colours[5])
     print_colour(f"{story}", colours[num])
+
+
+def end_of_story(name, style):
+    global players_choices
+    print_colour(doom_font.renderText("Show Time"), colours[5])
+    print_colour("It was the evening of the third years\n"
+                 "showcase at En Pointe Dance Academy!\n", colours[4])
+
+    if "c" in players_choices:
+        print_colour(f"Derek got to watch {name.capitalize()}\n"
+                     f"in the lead role of the {style} dance\n"
+                     "due to the lead coming down with flu.\n"
+                     f"{name.capitalize()}'s performance surpassed"
+                     "everyone's expectations\n"
+                     f"Derek was very proud of {name.capitalize()}\n"
+                     f"and wished {name.capitalize()} all the success\n"
+                     "for their career."
+                     "And so another school year was over\n"
+                     "soon new freshed face first years would\n"
+                     "be walking through the doors of\n"
+                     "En Pointe Dance Academy", colours[4])
+    else:
+        print_colour(f"{name.capitalize()}'s performance surpassed"
+                     " everyone's expectations\n"
+                     f"Derek was very proud of {name.capitalize()}\n"
+                     f"and wished {name.capitalize()} all the success\n"
+                     "for their career."
+                     "And so another school year was over\n"
+                     "soon new freshed face first years would\n"
+                     "be walking through the doors of\n"
+                     "En Pointe Dance Academy", colours[4])
+
+    print_colour(doom_font.renderText("The End"), colours[5])
 
 
 def story_adventure_game():
@@ -541,6 +593,7 @@ def story_adventure_game():
     story_paths("Role Goes To", story_dialogue['announcement'], 6)
     student_thoughts(student.name, thoughts_of_student['student-role'], 3)
     dance_role_revealed(student.name, student.style, student.gender)
+    end_of_story(student.name, student.style)
 
 
 if __name__ == "__main__":
