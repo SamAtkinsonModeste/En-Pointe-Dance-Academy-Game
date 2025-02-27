@@ -161,11 +161,14 @@ players_choices = []
 # ^ DICTIONARIES for the story
 story_dialogue = {
     "assembly":  data['story-1'][0]['derek-speech-1'],
-    "audition":  data['story-1'][0]['audition']
+    "audition":  data['story-1'][0]['audition'],
+    "announcement":  data['story-1'][0]['roles-announced']
+
 }
 
 thoughts_of_student = {
-    "assembly_thought": data['decision-1'][0]['thought-1']
+    "assembly_thought": data['decision-1'][0]['thought-1'],
+    "student-role":  data['story-1'][0]['character-role']
 }
 
 # intro to game story function
@@ -382,10 +385,10 @@ def students_character_traits(people, name, num):
     return characteristics_text, character_style
 
 
-def student_thoughts(name, thought):
+def student_thoughts(name, thought, num):
     print_colour(
         f"{name.capitalize()} {thought}",
-        colours[5])
+        colours[num])
     print_colour(f"Choose where {name.capitalize()}'s thought go:",
                  colours[0])
 
@@ -463,11 +466,54 @@ def actions_of_characters(name, style):
             colour_index = {"a": 2, "b": 3, "c": 1}[choice]
             print_colour(f"{name.capitalize()} {action}",
                          colours[colour_index])
+    if players_choices[0] == "c":
+        print_colour(
+            f"After the auditions Derek calls over {name.capitalize()}"
+            " and says:\n"
+            f"I can see you have lost your confidence {name.capitalize()}\n"
+            "You are one of the best dancers to grace our studios.\n"
+            "But I could tell you that till I am blue in the face.\n"
+            f"It's up to you to believe in yourself {name.capitalize()},\n"
+            "no one can do that for you but you.\n"
+            "See you in rehearsals.", colours[6])
+
+    check_errors_input("When you are ready type: OK", "ok",
+                       "Did you type:  Ok ?")
+    next_clear()
 
 
-def story_paths(title, story):
+def dance_role_revealed(name, style, gender):
+    global players_choices
+
+    roles_map = {
+        "a": f"Lead in {style} jazz!",
+        "b": "Main lead!!",
+        "c": f"Understudy lead {style}",
+    }
+
+    if gender == "female":
+        num = 4
+    else:
+        num = 5
+
+    student_style = style
+    if style == student_style:
+        role = players_choices[0]
+        if role in roles_map:
+            print_colour(
+                f"Under {name.capitalize()}'s name was the role:"
+                f"{roles_map[role]}",
+                colours[num])
+
+    if players_choices[0] == "c" and student_style == "allrounder":
+        print_colour(
+            f"Under {name.capitalize()}'s name was the role:"
+            " Main lead Understudy", colours[num])
+
+
+def story_paths(title, story, num):
     print_colour(doom_font.renderText(f"{title}"), colours[5])
-    print_colour(f"{story}", colours[6])
+    print_colour(f"{story}", colours[num])
 
 
 def story_adventure_game():
@@ -487,11 +533,14 @@ def story_adventure_game():
     about_game()
     gender = chose_gender()
     student = Student(gender)
-    story_paths("Assembly", story_dialogue['assembly'])
-    student_thoughts(student.name, thoughts_of_student['assembly_thought'])
+    story_paths("Assembly", story_dialogue['assembly'], 6)
+    student_thoughts(student.name, thoughts_of_student['assembly_thought'], 3)
     choices(student.name, student.style, "decision-1")
-    story_paths("Audition", story_dialogue['audition'])
+    story_paths("Audition", story_dialogue['audition'], 6)
     actions_of_characters(student.name, student.style)
+    story_paths("Role Goes To", story_dialogue['announcement'], 6)
+    student_thoughts(student.name, thoughts_of_student['student-role'], 3)
+    dance_role_revealed(student.name, student.style, student.gender)
 
 
 if __name__ == "__main__":
